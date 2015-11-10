@@ -6,8 +6,8 @@ require 'biblio_gem/version'
 Gem::Specification.new do |spec|
   spec.name          = "biblio_gem"
   spec.version       = BiblioGem::VERSION
-  spec.authors       = ["Adexe Sabina","David Redondo Durand"]
-  spec.email         = ["alu0100769609@ull.edu.es","alu0100851700@ull.edu.es"]
+  spec.authors       = ["Adexe Sabina"]
+  spec.email         = ["alu0100769609@ull.edu.es"]
 
   if spec.respond_to?(:metadata)
     spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."

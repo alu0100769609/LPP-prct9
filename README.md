@@ -1,9 +1,8 @@
 #Lenguajes y Paradigmas de Programación
-##Práctica6: Desarrollo Dirigido por Pruebas (TDD)
+##Práctica7: Desarrollo Dirigido por Pruebas (TDD)
 
-### Miembros del Equipo:
+### Miembro:
 * Adexe Sabina Pérez.
-* David F. Redondo Durand.
 
 ## Installation
 
