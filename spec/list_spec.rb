@@ -10,17 +10,17 @@ describe BiblioGem::List do
         end
         
         it "La lista no está vacía" do
-            expect(@lista1.size).to eq("3")
+            expect(@lista1.size).to eq(3)
         end
         
         it "Insertar un elemento" do
-            @lista.push("4")
-            expect(@lista1.size).to eq("4")
+            @lista1.push("4")
+            expect(@lista1.size).to eq(4)
         end
         
         it "Eliminar un elemento" do
-            @lista.pop()
-            expect(@lista1.size).to eq("2")
+            @lista1.pop()
+            expect(@lista1.size).to eq(2)
         end
     end
 end
