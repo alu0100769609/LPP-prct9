@@ -3,6 +3,6 @@
 require 'spec_helper'
 require 'biblio_gem'
 
-describe Node do
+describe BiblioGem::Node do
     
 end

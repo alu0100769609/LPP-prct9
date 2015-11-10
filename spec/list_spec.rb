@@ -3,6 +3,6 @@
 require 'spec_helper'
 require 'biblio_gem'
 
-describe List do
+describe BiblioGem::List do
     
 end
