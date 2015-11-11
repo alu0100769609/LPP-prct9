@@ -45,7 +45,7 @@ describe BiblioGem::List do
             expect(@lista1.pop).to be(@libro4)
             expect(@lista1.pop).to be(@libro5)
         end
-        it "Los libros son mostrados correctamente" do
+        it "Los libros son mostrados correctamente de forma individual" do
             @libro1.to_s.should eq("Autor/es: Dave Thomas, Andy Hunt, Chad Fowler\n Titulo: Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide. (The Facets of Ruby) Pragmatic Bookshelf\n Fecha: 4 edition (July 7, 2013).\n ISBN: [\"ISBN-13: 978-1937785499\", \"ISBN-10: 1937785491\"]\n")
             @libro2.to_s.should eq("Autor/es: Scott Chacon\n Titulo:  Pro Git 2009th Edition. (Pro)\n Fecha: Apress; 2009 edition (August 27, 2009)\n ISBN: [\"ISBN-13: 978-1430218333\", \"ISBN-10: 1430218339\"]\n")
             @libro3.to_s.should eq("Autor/es: David Flanagan, Yukihiro Matsumoto\n Titulo: The Ruby Programming Language. O’Reilly Media\n Fecha: 1 Edition (February 4, 2008)\n ISBN: [\"ISBN-10: 0596516177\", \"ISBN-13: 978-0596516178\"]\n")
@@ -53,7 +53,7 @@ describe BiblioGem::List do
             @libro5.to_s.should eq("Autor/es: Richard E\n Titulo:  . Silverman Git Pocket Guide O’Reilly Media\n Fecha: 1 edition (August 2, 2013)\n ISBN: [\"ISBN-10: 1449325866\", \"ISBN-13: 978-1449325862\"]\n")
         end
         
-        it "To_s" do
+        it "Los libros son mostrados correctamente de forma colectiva" do
             @lista1.to_s.should eq("#{@libro1.to_s}\n\n#{@libro2.to_s}\n\n#{@libro3.to_s}\n\n#{@libro4.to_s}\n\n#{@libro5.to_s}")
         end
     end
