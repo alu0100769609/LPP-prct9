@@ -52,5 +52,9 @@ describe BiblioGem::List do
             @libro4.to_s.should eq("Autor/es: David Chelimsky, Dave Astels, Bryan Helmkamp, Dan North, Zach Dennis, Aslak Hellesoy\n Titulo: The RSpec Book: Behaviour Driven Development with RSpec, Cucumber, and Friends (The Facets of Ruby). PragmaticBookshelf\n Fecha: 1 edition (December 25, 2010)\n ISBN: [\"ISBN-10: 1934356379\", \"ISBN-13: 978-1934356371\"]\n")
             @libro5.to_s.should eq("Autor/es: Richard E\n Titulo:  . Silverman Git Pocket Guide O’Reilly Media\n Fecha: 1 edition (August 2, 2013)\n ISBN: [\"ISBN-10: 1449325866\", \"ISBN-13: 978-1449325862\"]\n")
         end
+        
+        it "To_s" do
+            @lista1.to_s.should eq("#{@libro1.to_s}\n\n#{@libro2.to_s}\n\n#{@libro3.to_s}\n\n#{@libro4.to_s}\n\n#{@libro5.to_s}")
+        end
     end
 end
