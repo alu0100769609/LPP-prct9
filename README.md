@@ -1,5 +1,5 @@
 #Lenguajes y Paradigmas de Programación
-##Práctica7: Desarrollo Dirigido por Pruebas (TDD)
+##Práctica8: POO - Herencia
 
 ### Miembro:
 * Adexe Sabina Pérez.
