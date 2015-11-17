@@ -16,6 +16,7 @@ module BiblioGem
 	end
 	
 	class Libro < Bibliography
+		attr_accessor :isbn
 		def initialize (autor, titulo, fecha, isbn)
 			super(autor, titulo, fecha)
 			@isbn = isbn
@@ -33,6 +34,7 @@ module BiblioGem
 	end
 
 	class Revista < Bibliography
+		attr_accessor :issn
 		def initialize (autor, titulo, fecha, issn)
 			super(autor, titulo, fecha)
 			@issn = issn
@@ -41,14 +43,13 @@ module BiblioGem
 		def to_s
 			dato = super
 			if @issn.is_a? Array
-				dato << " ISBN: [\"#{@issn.join("\", \"")}\"]\n"
+				dato << " ISSN [\"#{@issn.join("\", \"")}\"]\n"
 			else
-				dato << " ISBN: #{@issn}\n"
+				dato << " ISSN #{@issn}\n"
 			end
 			dato 					#Devolvemos la cadena dato
 		end
 	end
-
 end
 =begin
         def to_s
