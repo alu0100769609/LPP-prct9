@@ -51,18 +51,3 @@ module BiblioGem
 		end
 	end
 end
-=begin
-        def to_s
-        	dato = ""
-   			if (@head != nil)
-				aux = @head
-				while (aux.next != nil) do
-					dato << aux.to_s
-					dato << "\n\n"
-					aux = aux.next
-				end 
-				dato << aux.to_s	#Cogemos el último elemento que se omite en el bucle
-				dato				#Devolvemos la cadena con la lista de bibliografías
-			end
-        end
-=end
