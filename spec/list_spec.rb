@@ -32,8 +32,6 @@ describe BiblioGem::List do
             @libro4 = BiblioGem::Libro.new(["David Chelimsky","Dave Astels","Bryan Helmkamp","Dan North","Zach Dennis","Aslak Hellesoy"],"The RSpec Book: Behaviour Driven Development with RSpec, Cucumber, and Friends (The Facets of Ruby). PragmaticBookshelf","1 edition (December 25, 2010)",["ISBN-10: 1934356379","ISBN-13: 978-1934356371"])
             @libro5 = BiblioGem::Libro.new("Richard E"," . Silverman Git Pocket Guide O’Reilly Media","1 edition (August 2, 2013)",["ISBN-10: 1449325866","ISBN-13: 978-1449325862"])
             @lista1 = BiblioGem::List.new(@libro1,@libro2,@libro3,@libro4,@libro5)
-            
-            #NOTA: Comprobar que libro es hijo de Bibliography
         end
         
         it "El número de libros es correcto" do
@@ -57,6 +55,42 @@ describe BiblioGem::List do
         
         it "Los libros son mostrados correctamente de forma colectiva" do
             expect(@lista1.to_s).to eq("#{@libro1.to_s}\n\n#{@libro2.to_s}\n\n#{@libro3.to_s}\n\n#{@libro4.to_s}\n\n#{@libro5.to_s}")
+        end
+    end
+    
+    describe "Pruebas de herencia" do
+        before :each do
+            @libro1 = BiblioGem::Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide. (The Facets of Ruby) Pragmatic Bookshelf", "4 edition (July 7, 2013).", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+            @revista1 = BiblioGem::Revista.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide. (The Facets of Ruby) Pragmatic Bookshelf", "4 edition (July 7, 2013).", "1234-5678")
+            @lista1 = BiblioGem::List.new(@libro1,@revista1)
+        end
+        
+        it "El libro1 es de la clase libro" do
+            expect(@libro1.is_a? Libro).to eq(true)
+        end
+        
+        it "El libro1 es de la clase bibliography" do
+            expect(@libro1.is_a? Bibliography).to eq(true)
+        end
+        
+        it "El libro1 es una instancia de la clase libro" do
+            expect(@libro1.instance_of? Libro).to eq(true)
+        end
+        
+        it "El libro1 no es una instancia de la clase bibliography" do
+            expect(@libro1.instance_of? Bibliography).to eq(false)
+        end
+        
+        it "El libro1 no tiene issn" do
+            expect(@libro1.respond_to?(:issn)).to eq(false)
+        end
+        
+        it "La revista1 tiene issn" do
+            expect(@revista1.respond_to?(:issn)).to eq(true)
+        end
+        
+        it "La revista1 no tiene isbn" do
+            expect(@revista1.respond_to?(:isbn)).to eq(false)
         end
     end
 end
