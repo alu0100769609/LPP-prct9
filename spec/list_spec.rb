@@ -66,19 +66,19 @@ describe BiblioGem::List do
         end
         
         it "El libro1 es de la clase libro" do
-            expect(@libro1.is_a? Libro).to eq(true)
+            expect(@libro1.is_a? BiblioGem::Libro).to eq(true)
         end
         
         it "El libro1 es de la clase bibliography" do
-            expect(@libro1.is_a? Bibliography).to eq(true)
+            expect(@libro1.is_a? BiblioGem::Bibliography).to eq(true)
         end
         
         it "El libro1 es una instancia de la clase libro" do
-            expect(@libro1.instance_of? Libro).to eq(true)
+            expect(@libro1.instance_of? BiblioGem::Libro).to eq(true)
         end
         
         it "El libro1 no es una instancia de la clase bibliography" do
-            expect(@libro1.instance_of? Bibliography).to eq(false)
+            expect(@libro1.instance_of? BiblioGem::Bibliography).to eq(false)
         end
         
         it "El libro1 no tiene issn" do
@@ -91,6 +91,10 @@ describe BiblioGem::List do
         
         it "La revista1 no tiene isbn" do
             expect(@revista1.respond_to?(:isbn)).to eq(false)
+        end
+        
+        it "La lista nueva lista es mostrada correctamente (libro1 + revista1" do
+            expect(@lista1.to_s).to eq("#{@libro1.to_s}\n\n#{@revista1.to_s}")
         end
     end
 end
