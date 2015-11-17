@@ -10,7 +10,7 @@ describe BiblioGem do
 
    describe "Almacenamiento de datos (1 autor):" do
       before :each do
-        @bib1 = BiblioGem::Bibliography.new("Autor1","Titulo1","Fecha1","ISBN1")
+        @bib1 = BiblioGem::Bibliography.new("Autor1","Titulo1","Fecha1")
       end
 
       it "El nombre del autor es correcto" do
@@ -24,15 +24,11 @@ describe BiblioGem do
       it "La fecha del libro es correcta" do
          @bib1.fecha.should eq("Fecha1")
       end
-
-      it "ISBN correcto" do
-         @bib1.isbn.should eq("ISBN1")
-      end
    end
    
    describe "Almacenamiento de datos (2 autores):" do
       before :each do
-         @bib2 = BiblioGem::Bibliography.new(["Autor1","Autor2"],"Titulo2","Fecha2","ISBN2")
+         @bib2 = BiblioGem::Bibliography.new(["Autor1","Autor2"],"Titulo2","Fecha2")
       end
       
       it "El nombre de ambos autores son correctos" do
@@ -46,24 +42,20 @@ describe BiblioGem do
       it "La fecha del libro es correcta" do
          @bib2.fecha.should eq("Fecha2")
       end
-
-      it "ISBN correcto" do
-         @bib2.isbn.should eq("ISBN2")
-      end
    end
    
    describe "Imprimiendo datos" do
       before :each do
-         @bib1 = BiblioGem::Bibliography.new("Autor1","Titulo1","Fecha1","ISBN1")
-         @bib2 = BiblioGem::Bibliography.new(["Autor1","Autor2"],"Titulo2","Fecha2","ISBN2")
+         @bib1 = BiblioGem::Bibliography.new("Autor1","Titulo1","Fecha1")
+         @bib2 = BiblioGem::Bibliography.new(["Autor1","Autor2"],"Titulo2","Fecha2")
       end
        
       it "Imprimiendo datos 1" do
-         @bib1.to_s.should eq("Autor/es: Autor1\n Titulo: Titulo1\n Fecha: Fecha1\n ISBN: ISBN1\n")
+         @bib1.to_s.should eq("Autor/es: Autor1\n Titulo: Titulo1\n Fecha: Fecha1\n")
       end
       
       it "Imprimiendo datos 2" do
-         @bib2.to_s.should eq("Autor/es: Autor1, Autor2\n Titulo: Titulo2\n Fecha: Fecha2\n ISBN: ISBN2\n")
+         @bib2.to_s.should eq("Autor/es: Autor1, Autor2\n Titulo: Titulo2\n Fecha: Fecha2\n")
       end
    end
    
