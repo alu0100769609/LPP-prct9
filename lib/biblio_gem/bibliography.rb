@@ -31,6 +31,24 @@ module BiblioGem
 			dato 					#Devolvemos la cadena dato
 		end
 	end
+
+	class Revista < Bibliography
+		def initialize (autor, titulo, fecha, issn)
+			super(autor, titulo, fecha)
+			@issn = issn
+		end
+		
+		def to_s
+			dato = super
+			if @issn.is_a? Array
+				dato << " ISBN: [\"#{@issn.join("\", \"")}\"]\n"
+			else
+				dato << " ISBN: #{@issn}\n"
+			end
+			dato 					#Devolvemos la cadena dato
+		end
+	end
+
 end
 =begin
         def to_s
