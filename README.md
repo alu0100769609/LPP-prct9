@@ -1,5 +1,5 @@
 #Lenguajes y Paradigmas de Programación
-##Práctica8: POO - Herencia
+##Práctica9: POO - Módulos
 
 ### Miembro:
 * Adexe Sabina Pérez.
