@@ -16,13 +16,12 @@ module BiblioGem
 		end
 
 		def <=>(anOther)
-			if ((titulo.size <=> anOther.titulo.size) == 0)
+			if (titulo.size <=> anOther.titulo.size) == 0
     			autor.size <=> anOther.autor.size
     		else
     			titulo.size <=> anOther.titulo.size
     		end
 		end
-
 	end
 	
 	class Libro < Bibliography

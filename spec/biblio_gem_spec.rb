@@ -59,14 +59,13 @@ describe BiblioGem do
       end
    end
    
-   describe "Comparar 2 referencias bibliográficas" do      #Comparamos Primero por título, luego por autores
+   describe "Comparar 2 referencias bibliográficas" do
       before :each do
             @libro1 = BiblioGem::Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide. (The Facets of Ruby) Pragmatic Bookshelf", "4 edition (July 7, 2013).", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
             @libro2 = BiblioGem::Libro.new(["Dave Thomas", "Andy Hunt"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide. (The Facets of Ruby) Pragmatic Bookshelf", "4 edition (July 7, 2013).", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
             @libro3 = BiblioGem::Libro.new("Scott Chacon"," Pro Git 2009th Edition. (Pro)","Apress; 2009 edition (August 27, 2009)",["ISBN-13: 978-1430218333","ISBN-10: 1430218339"])
             @libro4 = BiblioGem::Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide. (The Facets of Ruby) Pragmatic Bookshelf", "4 edition (July 7, 2013).", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
             @lista1 = BiblioGem::List.new(@libro1,@libro2,@libro3,@libro4)
-
       end
       
       it "Libro1 y libro2 tienen distintos autores, libro1 tiene más" do
@@ -80,6 +79,5 @@ describe BiblioGem do
       it "Libro1 y libro4 son iguales" do
          expect(@libro1 == @libro4).to eq(true)
       end
-
    end
 end
