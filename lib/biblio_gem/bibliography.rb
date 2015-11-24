@@ -1,5 +1,6 @@
 module BiblioGem
 	class Bibliography
+		include Comparable
 		attr_accessor :autor, :titulo, :fecha
 
 		def initialize (autor, titulo, fecha)
@@ -19,30 +20,6 @@ module BiblioGem
     			autor.size <=> anOther.autor.size
     		else
     			titulo.size <=> anOther.titulo.size
-    		end
-		end
-
-		def >(anOther)
-			if ((titulo.size > anOther.titulo.size) == 0)
-    			autor.size > anOther.autor.size
-    		else
-    			titulo.size > anOther.titulo.size
-    		end
-		end
-
-		def <(anOther)
-			if ((titulo.size < anOther.titulo.size) == 0)
-    			autor.size < anOther.autor.size
-    		else
-    			titulo.size < anOther.titulo.size
-    		end
-		end
-
-		def ==(anOther)
-			if ((titulo.size == anOther.titulo.size) == 0)
-    			autor.size == anOther.autor.size
-    		else
-    			titulo.size == anOther.titulo.size
     		end
 		end
 
