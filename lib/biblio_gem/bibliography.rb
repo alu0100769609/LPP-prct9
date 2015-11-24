@@ -13,6 +13,39 @@ module BiblioGem
 				"Autor/es: #{@autor}\n Titulo: #{@titulo}\n Fecha: #{@fecha}\n"
 			end
 		end
+
+		def <=>(anOther)
+			if ((titulo.size <=> anOther.titulo.size) == 0)
+    			autor.size <=> anOther.autor.size
+    		else
+    			titulo.size <=> anOther.titulo.size
+    		end
+		end
+
+		def >(anOther)
+			if ((titulo.size > anOther.titulo.size) == 0)
+    			autor.size > anOther.autor.size
+    		else
+    			titulo.size > anOther.titulo.size
+    		end
+		end
+
+		def <(anOther)
+			if ((titulo.size < anOther.titulo.size) == 0)
+    			autor.size < anOther.autor.size
+    		else
+    			titulo.size < anOther.titulo.size
+    		end
+		end
+
+		def ==(anOther)
+			if ((titulo.size == anOther.titulo.size) == 0)
+    			autor.size == anOther.autor.size
+    		else
+    			titulo.size == anOther.titulo.size
+    		end
+		end
+
 	end
 	
 	class Libro < Bibliography
