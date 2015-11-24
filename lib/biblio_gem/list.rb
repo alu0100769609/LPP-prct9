@@ -1,5 +1,6 @@
 module BiblioGem
 	class List
+		include Enumerable
 	    attr_accessor :head, :size
 	    def initialize(*dato)
 	        @head = nil
@@ -52,5 +53,14 @@ module BiblioGem
 				dato				#Devolvemos la cadena con la lista de bibliografías
 			end
         end
+        
+		def each
+			aux = @head
+			while aux!=nil
+				yield aux.value
+				aux = aux.next
+			end
+		end
+
 	end
 end
