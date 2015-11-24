@@ -97,4 +97,32 @@ describe BiblioGem::List do
             expect(@lista1.to_s).to eq("#{@libro1.to_s}\n\n#{@revista1.to_s}")
         end
     end
+
+   describe "Referencias bibliográficas, módulo enumerable" do
+      before :each do
+            @l = BiblioGem::List.new("Dato2","Dato1","Dato3")
+      end
+        
+      it "Comprobando metodo any?" do
+         expect(@l.any?{|dato| dato=="Dato2"}).to eq(true)
+         expect(@l.any?{|dato| dato=="Dato4"}).to eq(false)
+      end
+        
+      it "comprobrando el metodo count" do
+         expect(@l.count).to eq(3)
+      end
+        
+      it "comprobrando max" do
+         expect(@l.max).to eq("Dato3")
+      end
+        
+      it "comprobrando min" do
+         expect(@l.min).to eq("Dato1")
+      end
+        
+      it "comprobrando sort" do
+         expect(@l.sort).to eq(["Dato1","Dato2","Dato3"])
+      end
+   end
+
 end
