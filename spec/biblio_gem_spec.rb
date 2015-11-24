@@ -72,8 +72,12 @@ describe BiblioGem do
          expect(@libro1 <=> @libro2).to eq(1)
       end
       
-      it "Libro1 y libro3 tienen distinto título, y por tanto no son iguales" do
+      it "Libro1 y libro3 tienen distinto título, y por tanto no son iguales (1)" do
          expect(@libro1 > @libro3).to eq(true)
+      end
+      
+      it "Libro1 y libro3 tienen distinto título, y por tanto no son iguales (2)" do
+         expect(@libro1 < @libro3).to eq(false)
       end
       
       it "Libro1 y libro4 son iguales" do
