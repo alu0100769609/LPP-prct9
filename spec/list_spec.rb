@@ -103,24 +103,20 @@ describe BiblioGem::List do
             @lista = BiblioGem::List.new("Biblio1","Biblio3","Biblio2")
       end
         
-      it "Comprobando metodo any?" do
-         expect(@lista.any?{|dato| dato=="Biblio2"}).to eq(true)
-         expect(@lista.any?{|dato| dato=="Biblio0"}).to eq(false)
-      end
         
-      it "comprobrando el metodo count" do
+      it "Comprobrando elementos de la lista" do
          expect(@lista.count).to eq(3)
       end
         
-      it "comprobrando max" do
+      it "Biblio3 es el elemento mayor de la lista" do
          expect(@lista.max).to eq("Biblio3")
       end
         
-      it "comprobrando min" do
+      it "Biblio1 es el elemento menor de la lista" do
          expect(@lista.min).to eq("Biblio1")
       end
         
-      it "comprobrando sort" do
+      it "Se ordenan los elementos de la lista" do
          expect(@lista.sort).to eq(["Biblio1","Biblio2","Biblio3"])
       end
    end
